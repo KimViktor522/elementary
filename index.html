@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Элементарные заявки</title>
+  <meta name="description" content="Элементарные заявки — простая система обработки заявок для бизнеса" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#top" aria-label="На главную">
+        <img class="brand__logo" src="assets/logo.png" alt="Эмблема Элементарные заявки" width="40" height="40" />
+        <span class="brand__text">
+          <strong>Элементарные заявки</strong>
+          <small>простая система обработки заявок</small>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a href="#features">Возможности</a>
+        <a href="#analytics">Аналитика</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Демо</a>
+      </nav>
+
+      <button class="themeBtn" id="themeBtn" type="button" aria-label="Переключить тему">🌙</button>
+    </div>
+  </div>
+
+  <header class="hero" id="top">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <span class="badge">Электронный бизнес</span>
+        <h1>Элементарные заявки</h1>
+        <p class="subtitle">Прием и контроль обращений клиентов: статусы, SLA, аналитика и прозрачные процессы.</p>
+
+        <div class="buttons">
+          <a href="#contact" class="btn primary">Запросить демонстрацию</a>
+          <a href="#analytics" class="btn secondary">Посмотреть аналитику</a>
+        </div>
+
+        <div class="kpis" aria-label="Ключевые показатели">
+          <div class="kpi">
+            <div class="kpi__num" data-count="43">0</div>
+            <div class="kpi__label">снижение времени ответа, %</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__num" data-count="98">0</div>
+            <div class="kpi__label">прозрачность статусов, %</div>
+          </div>
+          <div class="kpi">
+            <div class="kpi__num" data-count="24">0</div>
+            <div class="kpi__label">часа до запуска пилота</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__card" role="img" aria-label="Карточка продукта">
+        <div class="hero__cardTop">
+          <img class="hero__logo" src="assets/logo.png" alt="" width="56" height="56" />
+          <div>
+            <div class="hero__product">Элементарные заявки</div>
+            <div class="hero__hint">контроль заявок • SLA • отчеты</div>
+          </div>
+        </div>
+
+        <div class="hero__mini">
+          <div class="pill">Новая заявка → назначение</div>
+          <div class="pill">SLA: 2ч • Приоритет: высокий</div>
+          <div class="pill">Статус: В работе • Уведомления</div>
+        </div>
+
+        <div class="hero__progress">
+          <div class="progressRow">
+            <span>Заявки обработаны</span>
+            <span id="progressText">72%</span>
+          </div>
+          <div class="progressBar" aria-label="Прогресс">
+            <div class="progressFill" id="progressFill" style="width:72%"></div>
+          </div>
+          <input id="progressRange" class="range" type="range" min="10" max="100" value="72" />
+          <div class="smallNote">Потяни ползунок — интерактив для демонстрации.</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h2>О продукте</h2>
+      <p class="lead">
+        «Элементарные заявки» — программный продукт для автоматизации приема, распределения и контроля выполнения заявок.
+        Рекламная страница демонстрирует возможности решения и собирает запросы на демонстрацию.
+      </p>
+    </div>
+  </section>
+
+  <section class="section light" id="features">
+    <div class="container">
+      <h2>Функциональные возможности</h2>
+      <div class="cards">
+        <article class="card"><h3>Прием заявок</h3><p>Единая форма обращения: тип, приоритет, описание.</p></article>
+        <article class="card"><h3>Маршрутизация</h3><p>Автораспределение по направлениям и ответственным.</p></article>
+        <article class="card"><h3>Контроль SLA</h3><p>План/факт сроков, напоминания и эскалации.</p></article>
+        <article class="card"><h3>Отчеты</h3><p>Метрики эффективности, нагрузка, динамика обращений.</p></article>
+        <article class="card"><h3>Уведомления</h3><p>Оповещения по статусам и срокам (по интеграции).</p></article>
+        <article class="card"><h3>Интеграции</h3><p>Подключение внешних систем через API (например, 1С).</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="analytics">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Аналитика (графики)</h2>
+        <p class="muted">Графики демонстрационные — удобно показывать принцип визуализации метрик.</p>
+      </div>
+
+      <div class="charts">
+        <div class="chartCard">
+          <h3>Заявки по месяцам</h3>
+          <canvas id="chartRequests" height="140"></canvas>
+        </div>
+        <div class="chartCard">
+          <h3>Соблюдение SLA</h3>
+          <canvas id="chartSLA" height="140"></canvas>
+        </div>
+        <div class="chartCard wide">
+          <h3>Структура статусов</h3>
+          <canvas id="chartStatus" height="120"></canvas>
+          <div class="smallNote">Данные меняются в <code>main.js</code>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (accordion) -->
+  <section class="section light" id="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+
+      <div class="faq">
+        <button class="faq__q" type="button">Это реальный сервис или демо?</button>
+        <div class="faq__a">
+          Это рекламная страница продукта. Для учебной демонстрации показывает структуру, метрики и интерактив.
+        </div>
+
+        <button class="faq__q" type="button">Можно ли подключить реальную форму?</button>
+        <div class="faq__a">
+          Да: можно сделать отправку через PHP (mail/SMTP) или через внешний endpoint (например, Telegram-бот/CRM).
+        </div>
+
+        <button class="faq__q" type="button">Почему self-signed HTTPS локально — это нормально?</button>
+        <div class="faq__a">
+          В локальной разработке самоподписанный сертификат используется для теста HTTPS. В продакшене ставят сертификат от CA.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2>Запросить демонстрацию</h2>
+      <p class="lead">Оставь контакты — и мы свяжемся. (Форма пока без отправки, кнопка показывает интерактив.)</p>
+
+      <form class="form" id="demoForm">
+        <div class="formRow">
+          <label>
+            Компания
+            <input name="company" type="text" placeholder="ООО «Пример»" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" placeholder="name@company.ru" required />
+          </label>
+        </div>
+
+        <label>
+          Сообщение
+          <textarea name="msg" placeholder="Опишите задачу и примерный объем обращений"></textarea>
+        </label>
+
+        <button class="btn primary" type="submit">Отправить запрос</button>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <img class="footer__logo" src="assets/logo.png" alt="" width="34" height="34" />
+        <div>
+          <strong>Элементарные заявки</strong>
+          <div class="muted">© 2026 • рекламная страница продукта</div>
+        </div>
+      </div>
+      <div class="footer__right">
+        <a href="#top">Наверх</a>
+        <a href="#features">Возможности</a>
+        <a href="#analytics">Аналитика</a>
+        <a href="#contact">Демо</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Demo modal -->
+  <div class="modal" id="demoModal" hidden>
+    <div class="modal__overlay" data-close="1"></div>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+      <button class="modal__close" type="button" data-close="1" aria-label="Закрыть">✕</button>
+      <h2 id="demoTitle">Запросить демонстрацию</h2>
+
+      <form class="form" id="demoModalForm">
+        <div class="formRow">
+          <label>Компания <input name="company" type="text" placeholder="ООО «Пример»" required /></label>
+          <label>Email <input name="email" type="email" placeholder="name@company.ru" required /></label>
+        </div>
+        <label>Сообщение <textarea name="msg" placeholder="Опишите задачу"></textarea></label>
+        <button class="btn primary" type="submit">Отправить</button>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
