@@ -146,17 +146,6 @@ h1{font-size:40px;line-height:1.1;margin:14px 0 10px}
 .chartCard h3{margin:0 0 10px}
 
 .faq{margin-top:14px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
-.faq__q{
-  width:100%;text-align:left;
-  padding:14px 16px;
-  border:0;border-bottom:1px solid var(--line);
-  background:transparent;
-  font-weight:900;
-  color:var(--fg);
-  cursor:pointer;
-}
-.faq__a{padding:0 16px;max-height:0;overflow:hidden;color:var(--muted);transition:max-height .25s ease, padding .25s ease}
-.faq__a.open{padding:12px 16px;max-height:220px}
 
 .form{margin-top:14px;max-width:720px}
 .formRow{display:grid;grid-template-columns:1fr 1fr;gap:12px}

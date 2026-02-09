@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".js-open-demo").forEach((el) => {
     el.addEventListener("click", (e) => {
-      e.preventDefault();
+      if (e && e.preventDefault) e.preventDefault();
       openModal();
     });
   });
