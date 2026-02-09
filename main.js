@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
       type: "line",
       data: {
         labels: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн"],
-        datasets: [{ label: "Заявки", data: [120, 160, 140, 210, 260, 240], tension: 0.35 }]
+        datasets: [{ label: "Заявки", data: [120, 160, 140, 210, 260, 230], tension: 0.35 }]
       },
       options: commonOptions
     });
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
       type: "bar",
       data: {
         labels: ["1 линия", "2 линия", "3 линия"],
-        datasets: [{ label: "Соблюдение SLA, %", data: [92, 86, 78] }]
+        datasets: [{ label: "Соблюдение SLA, %", data: [92, 56, 3] }]
       },
       options: commonOptions
     });
