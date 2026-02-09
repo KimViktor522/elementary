@@ -111,6 +111,23 @@ document.addEventListener("DOMContentLoaded", () => {
     closeModal();
   });
 
+  // ===== FAQ (<details>) reliable toggle =====
+  // В некоторых браузерах/сборках стили или обработчики могут мешать нативному раскрытию <details>.
+  // Поэтому принудительно переключаем open по клику на summary и закрываем остальные пункты.
+  const faqItems = Array.from(document.querySelectorAll(".faqItem"));
+  faqItems.forEach((item) => {
+    const summary = item.querySelector("summary");
+    if (!summary) return;
+    summary.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      const willOpen = !item.hasAttribute("open");
+      // close others
+      faqItems.forEach((it) => { if (it !== item) it.removeAttribute("open"); });
+      if (willOpen) item.setAttribute("open", "");
+      else item.removeAttribute("open");
+    });
+  });
+
   // ===== Charts (Chart.js) =====
   // If Chart.js is blocked/offline, skip gracefully.
   if (typeof Chart === "undefined") return;
