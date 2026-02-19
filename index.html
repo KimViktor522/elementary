@@ -1,231 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Элементарные заявки</title>
-  <meta name="description" content="Элементарные заявки — простая система обработки заявок для бизнеса" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Элементарные заявки — система учета и обработки заявок</title>
+  <meta name="description" content="Элементарные заявки — веб‑система для регистрации, распределения и контроля выполнения заявок. Статусы, исполнители, сроки, аналитика.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="topbar">
+  <header class="topbar" id="top">
     <div class="container topbar__inner">
-      <a class="brand" href="#top" aria-label="На главную">
-        <img class="brand__logo" src="assets/logo.png" alt="Эмблема Элементарные заявки" width="40" height="40" />
-        <span class="brand__text">
+      <div class="brand">
+        <img class="brand__logo" src="assets/logo.png" alt="Эмблема Элементарные заявки" width="44" height="44">
+        <div class="brand__text">
           <strong>Элементарные заявки</strong>
-          <small>простая система обработки заявок</small>
-        </span>
-      </a>
+          <span>учет и обработка заявок</span>
+        </div>
+      </div>
 
       <nav class="nav">
-        <a href="#features">Возможности</a>
-        <a href="#analytics">Аналитика</a>
-        <a href="#faq">FAQ</a>
-        <button class="nav__cta js-open-demo" type="button">Демо</button>
+        <a href="#about">О системе</a>
+        <a href="#how">Как работает</a>
+        <a href="#screens">Скриншоты</a>
+        <button class="btn btn--dark js-open-demo" type="button">Демо</button>
       </nav>
-
-      <button class="themeBtn" id="themeBtn" type="button" aria-label="Переключить тему">🌙</button>
-    </div>
-  </div>
-
-  <header class="hero" id="top">
-    <div class="container hero__grid">
-      <div class="hero__content">
-        <span class="badge">Электронный бизнес</span>
-        <h1>Элементарные заявки</h1>
-        <p class="subtitle">Прием и контроль обращений клиентов: статусы, SLA, аналитика и прозрачные процессы.</p>
-
-        <div class="buttons">
-          <button class="btn primary js-open-demo" type="button">Запросить демонстрацию</button>
-          <a href="#analytics" class="btn secondary">Посмотреть аналитику</a>
-        </div>
-
-        <div class="kpis" aria-label="Ключевые показатели">
-          <div class="kpi">
-            <div class="kpi__num" data-count="43">0</div>
-            <div class="kpi__label">снижение времени ответа, %</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi__num" data-count="98">0</div>
-            <div class="kpi__label">прозрачность статусов, %</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi__num" data-count="24">0</div>
-            <div class="kpi__label">часа до запуска пилота</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__card" role="img" aria-label="Карточка продукта">
-        <div class="hero__cardTop">
-          <img class="hero__logo" src="assets/logo.png" alt="" width="56" height="56" />
-          <div>
-            <div class="hero__product">Элементарные заявки</div>
-            <div class="hero__hint">контроль заявок • SLA • отчеты</div>
-          </div>
-        </div>
-
-        <div class="hero__mini">
-          <div class="pill">Новая заявка → назначение</div>
-          <div class="pill">SLA: 2ч • Приоритет: высокий</div>
-          <div class="pill">Статус: В работе • Уведомления</div>
-        </div>
-
-        <div class="hero__progress">
-          <div class="progressRow">
-            <span>Заявки обработаны</span>
-            <span id="progressText">72%</span>
-          </div>
-          <div class="progressBar" aria-label="Прогресс">
-            <div class="progressFill" id="progressFill" style="width:72%"></div>
-          </div>
-          <input id="progressRange" class="range" type="range" min="10" max="100" value="72" />
-          <div class="smallNote">Потяни ползунок — интерактив для демонстрации.</div>
-        </div>
-      </div>
     </div>
   </header>
 
-  <section class="section" id="about">
-    <div class="container">
-      <h2>О продукте</h2>
-      <p class="lead">
-        «Элементарные заявки» — программный продукт для автоматизации приема, распределения и контроля выполнения заявок.
-        Рекламная страница демонстрирует возможности решения и собирает запросы на демонстрацию.
-      </p>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__left">
+          <p class="badge">Сервис‑деск / учет обращений</p>
+          <h1>Элементарные заявки — система учета и обработки заявок</h1>
+          <p class="lead">
+            <b>Элементарные заявки</b> — веб‑система для регистрации заявок, назначения исполнителей,
+            контроля статусов и сроков, а также анализа нагрузки и качества обслуживания.
+          </p>
 
-  <section class="section light" id="features">
-    <div class="container">
-      <h2>Функциональные возможности</h2>
-      <div class="cards">
-        <article class="card"><h3>Прием заявок</h3><p>Единая форма обращения: тип, приоритет, описание.</p></article>
-        <article class="card"><h3>Маршрутизация</h3><p>Автораспределение по направлениям и ответственным.</p></article>
-        <article class="card"><h3>Контроль SLA</h3><p>План/факт сроков, напоминания и эскалации.</p></article>
-        <article class="card"><h3>Отчеты</h3><p>Метрики эффективности, нагрузка, динамика обращений.</p></article>
-        <article class="card"><h3>Уведомления</h3><p>Оповещения по статусам и срокам (по интеграции).</p></article>
-        <article class="card"><h3>Интеграции</h3><p>Подключение внешних систем через API (например, 1С).</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="analytics">
-    <div class="container">
-      <div class="sectionHead">
-        <h2>Аналитика (графики)</h2>
-        <p class="muted">Графики демонстрационные — удобно показывать принцип визуализации метрик.</p>
-      </div>
-
-      <div class="charts">
-        <div class="chartCard">
-          <h3>Заявки по месяцам</h3>
-          <canvas id="chartRequests" height="140"></canvas>
-        </div>
-        <div class="chartCard">
-          <h3>Соблюдение SLA</h3>
-          <canvas id="chartSLA" height="140"></canvas>
-        </div>
-        <div class="chartCard wide">
-          <h3>Структура статусов</h3>
-          <canvas id="chartStatus" height="60"></canvas>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ (accordion) -->
-  <section class="section light" id="faq">
-    <div class="container">
-      <h2>FAQ</h2>
-
-      <div class="faq">
-        <details class="faqItem">
-          <summary class="faqSummary">Это реальный сервис или демо?</summary>
-          <div class="faqAnswer">
-            Это рекламная страница продукта. Для учебной демонстрации показывает структуру, метрики и интерактив.
+          <div class="hero__cta">
+            <a class="btn btn--dark" href="#screens">Посмотреть интерфейс</a>
+            <button class="btn btn--ghost js-open-demo" type="button">Запросить демонстрацию</button>
           </div>
-        </details>
 
-        <details class="faqItem">
-          <summary class="faqSummary">Можно ли подключить реальную форму?</summary>
-          <div class="faqAnswer">
-            Да: можно сделать отправку через PHP (mail/SMTP) или через внешний endpoint (например, Telegram-бот/CRM).
+          <div class="value">
+            <div class="value__item">
+              <div class="value__title">Для кого</div>
+              <div class="value__text">сервисные службы, IT‑поддержка, сопровождение клиентов, внутренние заявки</div>
+            </div>
+            <div class="value__item">
+              <div class="value__title">Что решает</div>
+              <div class="value__text">не теряются обращения, прозрачные статусы, контроль исполнителей и сроков</div>
+            </div>
+            <div class="value__item">
+              <div class="value__title">Результат</div>
+              <div class="value__text">быстрее реакция, меньше хаоса, понятная аналитика по заявкам</div>
+            </div>
           </div>
-        </details>
-		
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container">
-      <h2>Запросить демонстрацию</h2>
-      <p class="lead">Оставь контакты — и мы свяжемся. (Форма пока без отправки, кнопка показывает интерактив.)</p>
-
-      <form class="form" id="demoForm">
-        <div class="formRow">
-          <label>
-            Компания
-            <input name="company" type="text" placeholder="ООО «Пример»" required />
-          </label>
-          <label>
-            Email
-            <input name="email" type="email" placeholder="name@company.ru" required />
-          </label>
         </div>
 
-        <label>
-          Сообщение
-          <textarea name="msg" placeholder="Опишите задачу и примерный объем обращений"></textarea>
-        </label>
+        <div class="hero__right" aria-label="Превью интерфейса">
+          <div class="preview preview--big">
+            <img src="assets/screen_list.png" alt="Список заявок: поиск, таблица, статусы, категории, контрагенты">
+            <div class="preview__cap">
+              Экран 1: список заявок — быстрый поиск, фильтры, статусы и ответственные.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <button class="btn primary" type="submit">Отправить запрос</button>
-        <div class="toast" id="toast" role="status" aria-live="polite"></div>
-      </form>
-    </div>
-  </section>
+    <section class="section" id="about">
+      <div class="container">
+        <h2>О системе</h2>
+        <p class="text">
+          Система предназначена для управляемого процесса обработки обращений: от момента регистрации до закрытия.
+          На главном экране пользователь сразу видит, <b>какие заявки есть</b>, <b>в каком они статусе</b>,
+          <b>кто исполнитель</b>, <b>какая категория</b> и <b>насколько срочно</b>.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Реестр заявок</h3>
+            <p>Единый список со статусами, категориями, контрагентами и поиском.</p>
+          </div>
+          <div class="card">
+            <h3>Карточка заявки</h3>
+            <p>Заполнение ключевых полей, описание обращения, назначение исполнителя и контроль.</p>
+          </div>
+          <div class="card">
+            <h3>Учет времени</h3>
+            <p>Фиксация фактически затраченного времени для анализа и отчетности.</p>
+          </div>
+          <div class="card">
+            <h3>Отчеты</h3>
+            <p>Аналитика по нагрузке, категориям, срокам и качеству выполнения.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="how">
+      <div class="container">
+        <h2>Как работает процесс</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">1</div>
+            <div class="step__body">
+              <div class="step__title">Создание заявки</div>
+              <div class="step__text">Пользователь нажимает «Создать», указывает категорию, срочность и описание.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">2</div>
+            <div class="step__body">
+              <div class="step__title">Распределение</div>
+              <div class="step__text">Заявка назначается исполнителю (ручное распределение или по регламенту).</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">3</div>
+            <div class="step__body">
+              <div class="step__title">Выполнение и учет времени</div>
+              <div class="step__text">Исполнитель работает по заявке и фиксирует фактически затраченное время.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">4</div>
+            <div class="step__body">
+              <div class="step__title">Закрытие и отчеты</div>
+              <div class="step__text">Заявка закрывается, данные попадают в отчеты и аналитику.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="screens">
+      <div class="container">
+        <div class="sectionHead">
+          <h2>Скриншоты интерфейса</h2>
+          <p class="muted">Чтобы посетитель сразу понял, как выглядит продукт и что в нем делается.</p>
+        </div>
+
+        <div class="gallery" role="region" aria-label="Галерея скриншотов">
+          <div class="gallery__main">
+            <img id="galleryMain" src="assets/screen_list.png" alt="Скриншот: список заявок">
+          </div>
+
+          <div class="gallery__thumbs">
+            <button class="thumb is-active" type="button" data-src="assets/screen_list.png" data-alt="Скриншот: список заявок">
+              <img src="assets/screen_list.png" alt="" aria-hidden="true">
+              <span>Список заявок</span>
+            </button>
+
+            <button class="thumb" type="button" data-src="assets/screen_card.png" data-alt="Скриншот: карточка заявки">
+              <img src="assets/screen_card.png" alt="" aria-hidden="true">
+              <span>Карточка заявки</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__left">
-        <img class="footer__logo" src="assets/logo.png" alt="" width="34" height="34" />
-        <div>
-          <strong>Элементарные заявки</strong>
-          <div class="muted">© 2026 • рекламная страница продукта</div>
-        </div>
+      <div>
+        <strong>Элементарные заявки</strong>
+        <div class="muted">Поясняющее описание + примеры экранов для защиты.</div>
       </div>
-      <div class="footer__right">
-        <a href="#top">Наверх</a>
-        <a href="#features">Возможности</a>
-        <a href="#analytics">Аналитика</a>
-        <button class="linkBtn js-open-demo" type="button">Демо</button>
-      </div>
+      <a class="muted" href="#top">Наверх</a>
     </div>
   </footer>
 
   <!-- Demo modal -->
   <div class="modal" id="demoModal" hidden>
     <div class="modal__overlay" data-close="1"></div>
-    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+    <div class="modal__box" role="dialog" aria-modal="true" aria-label="Запросить демонстрацию">
       <button class="modal__close" type="button" data-close="1" aria-label="Закрыть">✕</button>
-      <h2 id="demoTitle">Запросить демонстрацию</h2>
+      <h2>Запросить демонстрацию</h2>
+      <p class="muted">Оставьте контакты — и мы свяжемся. (Демо‑форма для учебной презентации.)</p>
 
-      <form class="form" id="demoModalForm">
-        <div class="formRow">
-          <label>Компания <input name="company" type="text" placeholder="ООО «Пример»" required /></label>
-          <label>Email <input name="email" type="email" placeholder="name@company.ru" required /></label>
-        </div>
-        <label>Сообщение <textarea name="msg" placeholder="Опишите задачу"></textarea></label>
-        <button class="btn primary" type="submit">Отправить</button>
-        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <form class="form" id="demoForm">
+        <label>Компания
+          <input name="company" type="text" placeholder="ООО «Пример»" required>
+        </label>
+        <label>Email
+          <input name="email" type="email" placeholder="name@company.ru" required>
+        </label>
+        <label>Сообщение
+          <textarea name="msg" placeholder="Опишите задачу и примерный объем обращений"></textarea>
+        </label>
+        <button class="btn btn--dark" type="submit">Отправить</button>
+        <div class="toast" id="toast" aria-live="polite"></div>
       </form>
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
